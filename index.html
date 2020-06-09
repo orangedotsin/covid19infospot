@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>covid19infospot</title>
+  <link rel="shortcut icon" type="image/png" href="logo png.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Frijole&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <style type="text/css">
+    
+    body{
+      background-color:;    
+    }
+    .carousel{
+      background-color: lightgray;
+    }
+    .carousel-item{
+      height: 300px;
+    }
+    #statewise thead{
+      color:white;
+    }
+    #cases{
+      text-align: center;
+    }
+    #world{
+      margin: 20px;
+      padding: 10px;
+      cursor: pointer;
+    }
+    #about h1{
+      margin-bottom: 50px;
+    }
+    #statewise img{
+      margin: 50px;
+    }
+    .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    opacity: 0.8;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .change .bar2 {opacity: 0;}
+
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+  #cur{
+    cursor:pointer;
+  }
+  </style>
+</head>
+<body id="MyPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" href="#"><img src="logo png.png" width="50" height="50"></a>
+    <a class="navbar-brand" href="#" style="font-size: 22px;font-family: 'Frijole', cursive;">ORANGE DOTS</a>
+    <div class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar" onclick="myFunction(this)" id="cur">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#MyPage"><i class="fa fa-home fa-lg"></i> HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#statewise"><i class="fa fa-list fa-lg"></i> STATE-WISE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#news"><i class="fa fa-newspaper-o fa-lg"></i> NEWS</a>
+        </li>    
+        <li class="nav-item">
+          <a class="nav-link" href="#aware"><i class="fa fa-hands fa-lg"></i> AWARENESS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about"><i class="fa fa-info fa-lg"></i> ABOUT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact"><i class="far fa-address-card fa-lg"></i> CONTACT</a>
+        </li>   
+      </ul>
+    </div>  
+  </nav>
+  <br>
+  <br>
+  <div class="container" style="margin-top: 70px;">
+    <div class="row row-content">
+      <div class="col">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+            <li data-target="#demo" data-slide-to="3"></li>
+          </ul>
+          <div class="carousel-inner">
+            <div class="carousel-item active" style="background-color: #2F4F4F;">
+              <div class="carousel-caption">
+                <h5><i><strong>"Ultimately, the greatest lesson that COVID-19 can teach humanity is that we are all in this together."</strong></i></h5>
+              </div>   
+            </div>
+            <div class="carousel-item" style="background-color: green;">
+              <div class="carousel-caption">
+               <h5>ORANGE DOTS<span> <i>is a Information Site for all sectors of Peoples.We are Started this(ORANGE DOTS) for Improve our Development skills as well as to give  information in a Easy-Way.</i></span></h5>
+              </div>   
+            </div>
+            <div class="carousel-item" style="background-color: orange;">
+              <div class="carousel-caption mb-3">
+                <div class="row">
+                  <div class="col">
+                    <img src="arogya.png" width="100" height="100">
+                  </div>
+                  <div class="col">
+                    <a href="https://play.google.com/store/apps/details?id=nic.goi.aarogyasetu&hl=en_IN" target="_blank"><i class="fab fa-android mr-3" style="font-size:40px"></i></a>
+                    <a href="https://apps.apple.com/in/app/aarogyasetu/id1505825357" target="_blank"><i class="fab fa-apple" style="font-size:36px"></i></a>
+                    <h4 style="color: white;">DOWNLOAD AROGYA SETU APP</h4>
+                  </div>
+                </div>
+              </div>   
+            </div>
+            <div class="carousel-item" style="background-color: #FF6347;">
+              <div class="carousel-caption mb-1">
+                <a href="https://forms.gle/Ws6FdpTTMwG9cWfC9" target="_blank"><i class="far fa-comment-alt" style="font-size: 48px;"></i></a>
+                <h3>Don't forget to give your valueable FeedBack after visiting <a href="#MyPage" style="color: white;;">this</a> Site.</h3>
+              </div>   
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container" id="cases">
+    <h1>Over All Tracker</h1>
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class='far fa-calendar-alt' style='font-size:36px'></i> <b>DATE</b> &amp; <i class='far fa-clock'style='font-size:36px'></i> <b>TIME</b>
+      </div>
+      <div class="card-body" id="date"></div>
+    </div>
+    <h2>INDIA</h2>
+    <div class="row p-5">
+      <div class="col-sm-4 slideanim" id="india">
+        <img src="corona.png" width="100" height="100">
+        <h5>ACTIVE CASES</h5>
+        <p><strong>1,24,981</strong></p>
+      </div>
+      <div class="col-sm-4 slideanim" id="india">
+        <img src="cureddis.png" width="100" height="100">
+        <h5>Recovered</h5>
+        <p><strong>1,24,429</strong></p>
+      </div>
+      <div class="col-sm-4 slideanim" id="india">
+        <img src="deaths.png" width="100" height="100">
+        <h5>Deceased</h5>
+        <p><strong>7,200</strong></p>
+      </div>
+    </div>
+    <div id="chartContainer" class=" mb-5" style="height: 300px; width: 100%;"></div>
+    <h4><i class="fa fa-globe fa-lg"></i> World-Wide Cases</h4>
+    <div class="row p-5">
+      <div class="col-12 col-sm-4 slideanim" id="world">
+        <div class="row">
+          <div class="col-4">
+            <i class="fas fa-viruses fa-lg mt-2" style="font-size: 50px;"></i>
+          </div>
+          <div class="col-7">
+            <h4>ACTIVE CASES</h4>
+            <h6>32,49,869</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm slideanim" id="world">
+        <div class="row">
+          <div class="col-4">
+            <i class="fas fa-virus-slash fa-lg mt-2 mr-1" style="font-size: 50px;"></i>
+          </div>
+          <div class="col-7">
+            <h4>Recovered</h4>
+            <h6>35,35,491</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm slideanim" id="world">
+        <div class="row">
+          <div class="col-4">
+            <i class="fas fa-hourglass-end fa-lg mt-2" style="font-size: 50px;"></i>
+          </div>
+          <div class="col-7">
+            <h4>Deceased</h4>
+            <h6>4,08,628</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center p-4">
+    <h3>Common Questions</h3>
+    <h5><div class="badge badge-danger p-2">COVID-19 ALERT</div></h5>
+    <div id="accordion">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-header">
+              <a class="card-link" data-toggle="collapse" href="#alert1">
+              What is the recovery time for the coronavirus disease?
+              </a>
+            </div>
+            <div id="alert1" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                Using available preliminary data, the median time from onset to clinical recovery for mild cases is approximately 2 weeks and is 3-6 weeks for patients with severe or critical disease.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mt-3 mb-3">
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#alert2">
+              Can COVID-19 spread through food?
+            </a>
+            </div>
+            <div id="alert2" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                It is highly unlikely that people can contract COVID-19 from food or food packaging. COVID-19 is a respiratory illness and the primary transmission route is through person-to- person contact and through direct contact with respiratory droplets generated when an infected person coughs or sneezes.<br>
+
+                There is no evidence to date of viruses that cause respiratory illnesses being transmitted via food or food packaging. Coronaviruses cannot multiply in food; they need an animal or human host to multiply.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#alert3">
+                How dangerous is the coronavirus disease?
+              </a>
+            </div>
+            <div id="alert3" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                Although for most people COVID-19 causes only mild illness, it can make some people very ill. More rarely, the disease can be fatal. Older people, and those with pre- existing medical conditions (such as high blood pressure, heart problems or diabetes) appear to be more vulnerable.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center">
+    <div id="accordion">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-header">
+              <a class="card-link" data-toggle="collapse" href="#alert4">
+              Can people recover from coronavirus disease?
+              </a>
+            </div>
+            <div id="alert4" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                You can recover from the coronavirus disease (COVID-19). Catching the new coronavirus DOES NOT mean you will have it for life. Most of the people who catch COVID-19 can recover and eliminate the virus from their bodies.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mt-3 mb-3">
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#alert5">
+              What is the coronavirus disease pandemic?
+            </a>
+            </div>
+            <div id="alert5" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                The 2019–20 coronavirus pandemic is an ongoing pandemic of coronavirus disease 2019 (COVID-19) caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2).
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#alert6">
+                What happens when you get the coronavirus disease?
+              </a>
+            </div>
+            <div id="alert6" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                People with COVID-19 generally develop signs and symptoms, including mild respiratory symptoms and fever, on an average of 5-6 days after infection (mean incubation period 5-6 days, range 1-14 days). Most people infected with COVID-19 virus have mild disease and recover.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center mt-3">
+    <div id="accordion">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-header">
+              <a class="card-link" data-toggle="collapse" href="#alert7">
+              Who is at risk for coronavirus?
+              </a>
+            </div>
+            <div id="alert7" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                People of all ages can be infected by the new coronavirus (COVID19). Older people, and people with pre-existing medical conditions (such as obesity, asthma, diabetes, heart disease) appear to be more vulnerable to becoming severely ill with the virus.
+                <br>
+                WHO advises people of all ages to take steps to protect themselves from the virus, for example by following good hand hygiene and good respiratory hygiene.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mt-3 mb-3">
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#alert8">
+              What is the usual body temperature in coronavirus disease patients?
+            </a>
+            </div>
+            <div id="alert8" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                The normal human body temperature remains around 36.5°C to 37°C, regardless of the external temperature or weather. The most effective way to protect yourself against the new coronavirus is by frequently cleaning your hands with alcohol-based hand rub or washing them with soap and water.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#alert9">
+                What are some good foods to eat during the COVID-19 pandemic?
+              </a>
+            </div>
+            <div id="alert9" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                You should eat a variety of fresh and unprocessed foods every day to get the vitamins, minerals, dietary fibre, protein and antioxidants your body needs. Drink enough water. Eat fruits, vegetables, legumes (e.g. lentils, beans), nuts and whole grains (e.g. unprocessed maize, millet, oats, wheat, brown rice or starchy tubers or roots such as potato, yam, taro or cassava), and foods from animal sources (e.g. meat, fish, eggs and milk). For snacks, choose raw vegetables and fresh fruit rather than foods that are high in sugar, fat or salt.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center mt-3">
+    <div id="accordion">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-header">
+              <a class="card-link" data-toggle="collapse" href="#alert10">
+              When should I seek medical attention during the coronavirus disease pandemic?
+              </a>
+            </div>
+            <div id="alert10" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                Older people, and those with underlying medical problems like high blood pressure, heart problems or diabetes, are more likely to develop serious illness. People with fever, cough and difficulty breathing should seek medical attention. People can catch COVID-19 from others who have the virus.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mt-3 mb-3">
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#alert11">
+              What is the treatment for the coronavirus disease?
+            </a>
+            </div>
+            <div id="alert11" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                There is no specific treatment for disease caused by a novel coronavirus. However, many of the symptoms can be treated and therefore treatment based on the patient's clinical condition.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#alert12">
+                Can the coronavirus disease be transmitted in hot or humid climates?
+              </a>
+            </div>
+            <div id="alert12" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                From the evidence so far, the COVID-19 virus can be transmitted in ALL AREAS, including areas with hot and humid weather. Regardless of climate, adopt protective measures if you live in, or travel to an area reporting COVID-19. The best way to protect yourself against COVID-19 is by frequently cleaning your hands. By doing this you eliminate viruses that may be on your hands and avoid infection that could occur by then touching your eyes, mouth, and nose.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center mt-3">
+    <div id="accordion">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-header">
+              <a class="card-link" data-toggle="collapse" href="#alert13">
+              How do viruses get their name?
+              </a>
+            </div>
+            <div id="alert13" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                Viruses are named based on their genetic structure to facilitate the development of diagnostic tests, vaccines and medicines. Virologists and the wider scientific community do this work, so viruses are named by the International Committee on Taxonomy of Viruses (ICTV).
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mt-3 mb-3">
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#alert14">
+              Is there a vaccine for the coronavirus disease?
+            </a>
+            </div>
+            <div id="alert14" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                When a disease is new, there is no vaccine until one is developed. It can take a number of years for a new vaccine to be developed.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container pt-5" id="statewise">
+    <h1 style="text-align:center;padding-top: 30px;">STATE-WISE COVID-19 Status</h1>
+    <div class="row">
+      <div class="col-12 col-sm-4"></div>
+      <div class="col-12 col-sm-4">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="search" class="form-control" placeholder="Enter State......." id="myInput">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa fa-search"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-warning alert-dismissible"><strong>Note:</strong> If you want to Know the Total No.of Cases/Recovered/Deceased.You Only Type as"Total".(Irrespective of LowerCase or UpperCase)
+    <button class="close"data-dismiss="alert" aria-label="close">&times;</button></div>
+    <marquee onmouseover="stop();" onmouseout="start();" style="color: brown;font-weight: bold;font-size:20px;">******** The Information Of COVID-19 Last Modified on Tue Jun 09 2020 09:53:53 ********</marquee>
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <table class="table table-striped table-hover table-responsive">
+          <thead class="bg-dark">
+            <tr>
+              <th>Sl.No</th>
+              <th>Name of STATE/UT</th>
+              <th>CONFORMED CASES</th>
+              <th>RECOVERED</th>
+              <th>DECEASED</th>
+              <th>Confirmed Cases</th>
+            </tr> 
+          </thead>
+          <tbody id="state">
+            <tr>
+                <td>1</td>
+                <td>Andaman and Nicobar Islands</td>
+                <td>0</td>
+                <td>33</td>
+                <td>0</td>
+                <td>33</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Andhra Pradesh</td>
+                <td>1951</td>
+                <td>2682</td>
+                <td>75</td>
+                <td>4708</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Arunachal Pradesh</td>
+                <td>50</td>
+                <td>1</td>
+                <td>0</td>
+                <td>51</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Assam</td>
+                <td>1946</td>
+                <td>615</td>
+                <td>4</td>
+                <td>2565</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Bihar</td>
+                <td>2578</td>
+                <td>2480</td>
+                <td>30</td>
+                <td>5088</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Chandigarh</td>
+                <td>36</td>
+                <td>273</td>
+                <td>5</td>
+                <td>314</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Chhattisgarh</td>
+                <td>786</td>
+                <td>283</td>
+                <td>4</td>
+                <td>1073</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Dadar Nagar Haveli</td>
+                <td>18</td>
+                <td>2</td>
+                <td>0</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Delhi</td>
+                <td>17125</td>
+                <td>10999</td>
+                <td>812</td>
+                <td>28936</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Goa</td>
+                <td>235</td>
+                <td>65</td>
+                <td>0</td>
+                <td>300</td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>Gujarat</td>
+                <td>5186</td>
+                <td>13635</td>
+                <td>1249</td>
+                <td>20070</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>Haryana</td>
+                <td>2286</td>
+                <td>2134</td>
+                <td>28</td>
+                <td>4448</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>Himachal Pradesh</td>
+                <td>184</td>
+                <td>224</td>
+                <td>5</td>
+                <td>413</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>Jammu and Kashmir</td>
+                <td>2830</td>
+                <td>1216</td>
+                <td>41</td>
+                <td>4087</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>Jharkhand</td>
+                <td>602</td>
+                <td>490</td>
+                <td>7</td>
+                <td>1099</td>
+              </tr>
+              
+              <tr>
+                <td>16</td>
+                <td>Karnataka</td>
+                <td>3259</td>
+                <td>2132</td>
+                <td>61</td>
+                <td>5452</td>
+              </tr>
+              <tr>
+                <td>17</td>
+                <td>Kerala</td>
+                <td>1096</td>
+                <td>803</td>
+                <td>15</td>
+                <td>1914</td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td>Ladakh</td>
+                <td>52</td>
+                <td>50</td>
+                <td>1</td>
+                <td>103</td>
+              </tr>
+              <tr>
+                <td>19</td>
+                <td>Madhya Pradesh</td>
+                <td>2658</td>
+                <td>6331</td>
+                <td>412</td>
+                <td>9401</td>
+              </tr>
+              <tr>
+                <td>20</td>
+                <td>Maharashtra</td>
+                <td>43601</td>
+                <td>39314</td>
+                <td>3060</td>
+                <td>85975</td>
+              </tr>
+              <tr>
+                <td>21</td>
+                <td>Manipur</td>
+                <td>120</td>
+                <td>52</td>
+                <td>0</td>
+                <td>172</td>
+              </tr>
+              <tr>
+                <td>22</td>
+                <td>Meghalaya</td>
+                <td>22</td>
+                <td>13</td>
+                <td>1</td>
+                <td>36</td>
+              </tr>
+              <tr>
+                <td>23</td>
+                <td>Mizoram</td>
+                <td>33</td>
+                <td>1</td>
+                <td>0</td>
+                <td>34</td>
+              </tr>
+              <tr>
+                <td>24</td>
+                <td>Nagaland</td>
+                <td>110</td>
+                <td>8</td>
+                <td>0</td>
+                <td>118</td>
+              </tr>
+              <tr>
+                <td>25</td>
+                <td>Odisha</td>
+                <td>953</td>
+                <td>1894</td>
+                <td>9</td>
+                <td>2856</td>
+              </tr>
+              <tr>
+                <td>26</td>
+                <td>Puducherry</td>
+                <td>63</td>
+                <td>36</td>
+                <td>0</td>
+                <td>99</td>
+              </tr>
+              <tr>
+                <td>27</td>
+                <td>Punjab</td>
+                <td>451</td>
+                <td>2106</td>
+                <td>51</td>
+                <td>2608</td>
+              </tr>
+              <tr>
+                <td>28</td>
+                <td>Rajasthan</td>
+                <td>2718</td>
+                <td>7641</td>
+                <td>240</td>
+                <td>10599</td>
+              </tr>
+              <tr>
+                <td>29</td>
+                <td>Sikkim</td>
+                <td>7</td>
+                <td>0</td>
+                <td>0</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td>30</td>
+                <td>Tamil Nadu</td>
+                <td>14399</td>
+                <td>16999</td>
+                <td>269</td>
+                <td>31667</td>
+              </tr>
+              <tr>
+                <td>31</td>
+                <td>Telengana</td>
+                <td>1803</td>
+                <td>1710</td>
+                <td>137</td>
+                <td>3650</td>
+              </tr>
+              <tr>
+                <td>32</td>
+                <td>Tripura</td>
+                <td>608</td>
+                <td>192</td>
+                <td>0</td>
+                <td>800</td>
+              </tr>
+              <tr>
+                <td>33</td>
+                <td>Uttarakhand</td>
+                <td>814</td>
+                <td>528</td>
+                <td>13</td>
+                <td>1355</td>
+              </tr>
+              <tr>
+                <td>34</td>
+                <td>Uttar Pradesh</td>
+                <td>4076</td>
+                <td>6185</td>
+                <td>275</td>
+                <td>10536</td>
+              </tr>                    
+              <tr>
+                <td>35</td>
+                <td>West Bengal</td>
+                <td>4488</td>
+                <td>3303</td>
+                <td>396</td>
+                <td>8187</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Cases being reassigned to states</td>
+                <td>7837</td>
+                <td></td>
+                <td></td>
+                <td>7837</td>
+              </tr>
+            <tr style="background-color: lightblue;font-weight: bold;color: blue;"><td>*</td><td>Total in India</td><td>124981</td><td>124430</td><td>7200</td><td>256611</td></tr>
+          </tbody>
+        </table>
+        <p style="text-align: center;color:black;">*States wise distribution is subject to further verification and reconciliation<br>
+        *Our figures are being reconciled with <a href="https://www.mohfw.gov.in" target="_blank">Health Ministry</a></p>
+      </div>
+      <div class="col col-sm ml-3"><img src="india.png"> </div>
+    </div>
+  </div>
+  <br>
+  <section id="news">
+    <br>
+  <div class="container text-center pt-5">
+    <h1>LATEST NEWS</h1>
+    <div class="row">
+      <div class="col-sm m-1">
+        <div class="card">
+          <div class="card-header">
+            <marquee onmouseover="stop();" onmouseout="start();"><strong>LATEST NEWS:</strong><span style="color: red;font-size: 21px;"> You can only see the latest news of COVID-19 Yesterday's</span></marquee> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm m-1">
+        <div class="card">
+          <div class="card-header">
+            <strong>Mumbai opens up:</strong> Heavy traffic jam along Western Expressway Highway
+          </div>
+          <div class="card-body">
+            Delhi borders, which were sealed last week, were opened for inter-state movement from today. With rising coronavirus figures in the city, the chief minister had last week sealed its borders, restricting the inter-state movement of non-Delhi residents while permitting only the operation of essential services.<br>
+            <span class="float-right badge bg-warning">08 JUNE 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm m-1">
+        <div class="card">
+          <div class="card-header">
+            <strong>Delhi borders opened:</strong> Traffic congestion seen on Delhi Noida Direct (DND) Flyway
+          </div>
+          <div class="card-body">
+            Delhi borders, which were sealed last week, were opened for inter-state movement from today. With rising coronavirus figures in the city, the chief minister had last week sealed its borders, restricting the inter-state movement of non-Delhi residents while permitting only the operation of essential services.<br>
+            <span class="float-right badge bg-warning">08 JUNE 2020</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm m-1">
+        <div class="card">
+          <div class="card-header">
+            With recovery of last case, New Zealand has eradicated virus
+          </div>
+          <div class="card-body">
+            Prime Minister Jacinda Ardern said Monday she was confident New Zealand has halted the spread of the coronavirus after the last known infected person in the country recovered. It has been 17 days since the last new case was reported, while 40,000 have been tested in that time. And Monday also marked the first time since late February that there have been no active cases. “We almost certainly will see cases here again, and that is not a sign that we have failed, it is a reality of this virus. But if and when that occurs we have to make sure and we are, that we are prepared," the PM said.<br>
+            <span class="float-right badge bg-warning">08 JUNE 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm m-1">
+        <div class="card">
+          <div class="card-header">
+            <strong>ExplainSpeaking:</strong> When and how will India’s economy recover, what will be the shape of its recovery
+          </div>
+          <div class="card-body">
+            With the process of “unlocking” underway, what will be the shape of India's recovery? "V" like the US? Or will it follow some other letters like “Z” or “U” or “L”? It is important to understand the factors that determine the shape of recovery. These include the overall duration of the pandemic, the effect on jobs and household incomes, the extent of fiscal stimulus provided by the government etc.<br>
+            <span class="float-right badge bg-warning">08 JUNE 2020</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm m-1">
+        <div class="card">
+          <div class="card-header">
+            <strong>Hyderabad:</strong>79 government doctors test positive in two weeks
+          </div>
+          <div class="card-body">
+            Healthcare workers at top government medical colleges and hospitals blame the government for exposing themto caronavirus by not testing enough.<br>
+            <span class="float-right badge bg-warning">08 JUNE 2020</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm m-1">
+        <div class="card">
+          <div class="card-header">
+            New Zealand says to lift all coronavirus restrictions
+          </div>
+          <div class="card-body">
+            New Zealand's Prime Minister Jacinda Ardern said on Monday that all coronavirus measures in the country will be lifted from Tuesday, barring border closure restrictions, as the virus had been eliminated from the country. The country would move to national alert level 1 from midnight on Monday, Ardern said in a news conference. She said public and private events can go on without restrictions, retail and hospitality sectors can operate normally, and all public transport can resume. <br>
+            <span class="float-right badge bg-warning">08 JUNE 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="aware">
+  <br>
+  <div class="container text-center p-5 mt-5" style="background-color: lightgray;">
+    <div class="row p-3 m-3" style="background-color:yellow;font-weight: bold;">
+      <div class="col-sm-3">
+        Helpline Number: <a href="tel:+91-11-23978046">+91-11-23978046</a>
+      </div>
+      <div class="col-sm-3">
+        Toll Free: <a href="tel:1075">1075 </a>      
+      </div>
+      <div class="col-sm-3">
+        Helpline Email ID : <a href="mailto:ncov2019@gov.in">ncov2019@gov.in</a> 
+      </div>
+      <div class="col-sm-3">
+        <a href="https://www.mohfw.gov.in/pdf/coronvavirushelplinenumber.pdf" target="_blank">States & Union Territories(View .pdf)
+        </a>
+      </div>
+    </div>
+    <h1>AWARENESS OF <span style="color: red;">COVID-19</span></h1>
+    <i class="fas fa-viruses fa-lg mt-2" style="font-size: 50px;"></i><h3>#FightAganistCORONA</h3>
+    <div class="row">
+      <div class="col-sm-6">
+        <img src="fight.jpg" class="img-thumbnail" width="230" height="230">
+      </div>
+      <div class="col-sm-6 text-left">
+        <p style="font-size: 20px;">We are collectively facing a Pandemic threat that is sweeping across the humanity beyond oceans and borders. Considering the seriousness of COVID-19, it's about time we step up against this deadly disease. For the sake of lives lost and the rest of humanity, let us all pledge to beat Corona back.</p>
+      </div>
+    </div>
+    <i class="fas fa-minus-circle" style="font-size: 50px;"></i>
+    <h3>Symptoms</h3>
+    <p>COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization.</p>
+    <div class="row">
+      <div class="col slideanim">
+        <img src="light_fever.gif" width="100" height="100">
+        <br>
+        <h5>Fever</h5>
+      </div>
+      <div class="col slideanim">
+        <img src="light_cough.gif" width="100" height="100">
+        <br>
+        <h5>Cough</h5>
+      </div>
+      <div class="col slideanim">
+        <img src="light_tiredness.gif" width="100" height="100">
+        <br>
+        <h5>Tiredness</h5>
+      </div>
+    </div>
+    <div class="row p-4">
+      <div class="col-sm-6 p-5">
+        <img src="symp.jpg" class="img-thumbnail" width="300" height="300">
+      </div>
+      <div class="col-sm-6 text-left">
+        <strong>Less common symptoms:</strong>
+        <ol>
+          <li>Aches and pains</li>
+          <li>Sore throat</li>
+          <li>Diarrhoea</li>
+          <li>Conjunctivitis</li>
+          <li>Headache</li>
+          <li>Loss of taste or smell</li>
+          <li>A rash on skin, or discolouration of fingers or toes</li>
+        </ol>
+        <strong>Serious symptoms:</strong>
+          <ol>
+            <li>Difficulty breathing or shortness of breath</li>
+            <li>Chest pain or pressure</li>
+            <li>Loss of speech or movement</li>
+          </ol>
+      </div>
+    </div>
+    <i class="fa fa-exclamation-triangle" aria-hidden="true" style="font-size: 38px;"></i><h3>Precautions</h3>
+    <div class="row">
+      <div class="col p-3 slideanim">
+       <i class="fa fa-home" style="font-size: 50px;"></i><br>
+        Stay at <strong>HOME</strong>
+      </div>
+      <div class="col slideanim">
+        <img src="safedistance.png" width="80" height="80"><br>
+        Keep Safe <strong>DISTANCE</strong>
+      </div>
+      <div class="col slideanim">
+        <i class="fas fa-sign-language" style="font-size: 50px;"></i><br>
+        Wash Your <strong>HANDS</strong> 
+      </div>
+    </div>
+    <div class="row p-4">
+      <div class="col slideanim">
+        <i class="fas fa-head-side-mask m-2" style="font-size: 60px;"></i><br>
+        Wear <strong>MASK</strong>
+      </div>
+      <div class="col slideanim">
+        <i class="fa fa-phone m-2" style="font-size: 60px;"></i><br>
+         <strong>SICK:</strong> Call HelpLine
+      </div>
+    </div>
+    <a href="https://drive.google.com/file/d/1eHZ62jmcfbB9FLG-SaZoO23hw8HdRKIV/view" target="_blank"><button class="btn bg-dark p-3" type="button" style="color: white;font-weight: bold;">more info....</button></a>
+    <br>
+    <br>
+    <h2 class="m-3">About <strong>Novel Coronavirus</strong></h2>
+  <iframe class="ml-3 mr-3"width="280" height="230" src="https://www.youtube.com/embed/mOV1aBVYKGA?start=11" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</section>
+  <br>
+  <section id="about">
+    <br>
+  <div class="container text-center pt-5">
+    <h1>ABOUT US</h1>
+    <div class="row">
+      <div class="col-12 col-sm-5 mb-5 slideanim">
+        <div class="card" style="background-color: lightgray; box-shadow:0 15px 50px 0 gray,0 15px 353px 0 gray;">
+          <img class="card-img-top" src="sumanth.png" style="width: 200px;height: 200px;padding:15px;margin:auto;">
+          <div class="card-header">
+            SUMANTH NEELA
+          </div>
+          <div class="card-body">
+            <i class="fa fa-calendar fa-lg"></i> 26 NOVEMBER 2000<br><br>
+            <i class="fa fa-university fa-lg"></i> Bachelor Of Technology-II YEAR<br><br>
+            <i class="fas fa-envelope fa-lg"></i> <a href="mailto:sumanthreddyneela@gmail.com"> sumanthreddyneela@gmail.com</a><br><br>
+            FOLLOW ON<br>
+            <a class="card-link" href="https://www.facebook.com/profile.php?id=100007244777582" target="_blank"><i class="fab fa-facebook" style="font-size: 36px;"></i></a>
+            <a class="card-link"  href="https://www.instagram.com/s_neela_reddy_0110/" target="_blank"><i class='fab fa-instagram' style='font-size:36px'></i></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-2"></div>
+        <div class="col-12 col-sm slideanim">
+          <div class="card" style="background-color: lightgray; box-shadow:0 15px 50px 0 gray,0 15px 353px 0 gray;">
+            <img class="card-img-top" src="kamal.png" style="width: 200px;height: 200px;padding:15px;margin:auto;">
+          <div class="card-header">
+            KAMAL CHIRUMALLA
+          </div>
+          <div class="card-body">
+            <i class="fa fa-calendar fa-lg"></i> 15 MARCH 2001<br><br>
+            <i class="fa fa-university fa-lg"></i> Bachelor Of Technology-II YEAR<br><br>
+            <i class="fas fa-envelope fa-lg"></i> <a href="mailto:chirumalla.kamal@gmail.com">chirumalla.kamal@gmail.com</a><br><br>
+            FOLLOW ON<br>
+            <a class="card-link" href="https://www.facebook.com/chirumalla.kamal" target="_blank"><i class="fab fa-facebook" style="font-size: 36px;"></i></a>
+            <a class="card-link"  href="https://www.instagram.com/chirumallakamal/" target="_blank"><i class='fab fa-instagram' style='font-size:36px'></i></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col m-1">
+        <i class='fas fa-adjust' style='font-size:36px'></i>
+        <i class='fas fa-code' style='font-size:36px'></i>
+        <i class="fas fa-keyboard" style='font-size:36px'></i>
+        <i class='fas fa-mobile-alt' style='font-size:36px'></i>
+        <i class='fas fa-laptop' style='font-size:36px'></i>
+        <i class='fas fa-desktop' style='font-size:36px'></i><br>
+          Above Series of Objects is more informative
+      </div>
+      <div class="col col-sm"></div>
+        <div class="card">
+          <div class="card-header">
+            Contribution By OUR TEAM
+          </div>
+          <br>
+          <div class="card-body">
+            Developed By <a class="card-link" href="https://github.com/sumanthneela" target="_blank"> sumanthneela</a><br><br>
+            Designed By <a class="card-link" href="https://github.com/chirumallakamal" target="_blank"> kamalchirumalla</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  <br>
+  <section id="contact">
+    <br>
+  <div class="container pt-5">
+    <div class="row">
+      <div class="col-12 col-sm-6 text-center">
+        <h2>Contact Us</h2>
+        <form>
+          <div class="form-group">
+            <div class="row">
+              <div class="col">
+                <label for="Name"><h5>Name</h5></label>
+              </div>
+              <div class="col">
+                <input type="text" name="Name" class="form-control" placeholder="Name......" disabled>   
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <label for="email"><h5>Email</h5></label>
+              </div>
+              <div class="col">
+                <input type="email" name="email" class="form-control" placeholder="Email......" disabled>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <label for="phnno"><h5>Phone No</h5></label>
+              </div>
+              <div class="col">
+                <input type="tel" name="phnno" class="form-control" placeholder="+91 XXXXX-XXXXX" disabled>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <label for="Message"><h5>Message</h5></label>
+              </div>
+              <div class="col">
+                <textarea type="textarea" name="Message" class="form-control" disabled></textarea>     
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="alert alert-warning alert-dismissible"><strong>***Note:</strong>You Can't Submit your Contact Details to us.Due to Response Request Problem,Shortly let you know when it's Wroking Proper.
+        </div>
+      </div>
+      <div class="col col-sm text-center">
+        <h2>Contact Details</h2>
+        <i class="fas fa-map-marker-alt" style="font-size: 25px;"></i><h8><strong> TELANGANA,INDIA</strong></h8><br>
+        <i class="fas fa-envelope" style="font-size: 25px;"></i><a href="mailto:sumanthreddyneela@gmail.com"> <strong>sumanthreddyneela@gmail.com</strong></a>
+        <br>
+        <a class="card-link " href="https://www.facebook.com/profile.php?id=100007244777582" target="_blank"><i class="fab fa-facebook mt-3" style="font-size: 36px;"></i></a>
+        <a class="card-link mt-5"  href="https://www.instagram.com/s_neela_reddy_0110/" target="_blank"><i class='fab fa-instagram mt-3' style='font-size:36px'></i></i></a><br>
+        <div class="alert alert-info alert-dismissible m-5"><strong>Give a Message.</strong>
+        <button class="close" data-dismiss="alert" aria-label="close">&times;</button></div>
+      </div>
+    </div>
+  </div>
+  </section>
+  <br>
+  <footer class="container text-center">
+    <a href="#MyPage"><i class='fas fa-angle-up' style='font-size:48px;color: gray;'></i></a><br>
+    <h7>&copy;CopyRight</h7><br><i class='fas fa-universal-access m-3' style='font-size:48px;color:red'></i>
+  </footer>
+</body>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#state tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+var d=Date();
+document.getElementById("date").innerHTML="<h4>"+d+"</h4>";
+//smooth scrolling
+$(document).ready(function(){
+  $(".navbar a, footer a[href='#MyPage']").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+        window.location.hash = hash;
+      });
+    }
+  });
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+$(document).ready(function(){
+  $('#demo').carousel( { interval: 1600 });
+})
+function myFunction(x) {
+  x.classList.toggle("change");
+}
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+  exportEnabled: true,
+  animationEnabled: true,
+  title:{
+    text: "Recovery & Death Rate"
+  },
+  legend:{
+    cursor: "pointer",
+    itemclick: explodePie
+  },
+  data: [{
+    type: "pie",
+    showInLegend: true,
+    toolTipContent: "{name}: <strong>{y}%</strong>",
+    indexLabel: "{name} - {y}%",
+    dataPoints: [
+      { y: 2.8, name: "Death" },
+      { y: 48.4, name: "Recovery" },
+      { y: 48.7, name: "Active",exploded: true}
+    ]
+  }]
+});
+chart.render();
+}
+
+function explodePie (e) {
+  if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+    e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+  } else {
+    e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+  }
+  e.chart.render();
+
+}
+</script>
+</html>
