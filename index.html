@@ -23,6 +23,7 @@
     }
     .carousel-item{
       height: 300px;
+      background-color: #2F4F4F; 
     }
     #statewise thead{
       color:white;
@@ -139,17 +140,17 @@
             <li data-target="#demo" data-slide-to="3"></li>
           </ul>
           <div class="carousel-inner">
-            <div class="carousel-item active" style="background-color: #2F4F4F;">
+            <div class="carousel-item active">
               <div class="carousel-caption">
                 <h5><i><strong>"Ultimately, the greatest lesson that COVID-19 can teach humanity is that we are all in this together."</strong></i></h5>
               </div>   
             </div>
-            <div class="carousel-item" style="background-color: green;">
+            <div class="carousel-item">
               <div class="carousel-caption">
                <h5>ORANGE DOTS<span> <i>is a Information Site for all sectors of People.We are Started this(ORANGE DOTS) for Improve our Development skills as well as to give  information in a Easy-Way.</i></span></h5>
               </div>   
             </div>
-            <div class="carousel-item" style="background-color: orange;">
+            <div class="carousel-item">
               <div class="carousel-caption mb-3">
                 <div class="row">
                   <div class="col">
@@ -163,7 +164,7 @@
                 </div>
               </div>   
             </div>
-            <div class="carousel-item" style="background-color: #FF6347;">
+            <div class="carousel-item">
               <div class="carousel-caption mb-1">
                 <a href="https://forms.gle/Ws6FdpTTMwG9cWfC9" target="_blank"><i class="far fa-comment-alt" style="font-size: 48px;"></i></a>
                 <h3>Don't forget to give your valuable FeedBack after visiting <a href="#MyPage" style="color: white;;">this</a> Site.</h3>
@@ -495,7 +496,7 @@
     </div>
     <div class="alert alert-warning alert-dismissible"><strong>Note:</strong> If you want to Know the Total No.of Cases/Recovered/Deceased.You Only Type as"Total".(Irrespective of LowerCase or UpperCase)
     <button class="close"data-dismiss="alert" aria-label="close">&times;</button></div>
-    <marquee onmouseover="stop();" onmouseout="start();" style="color: brown;font-weight: bold;font-size:20px;">******** The Information Of COVID-19 Last Modified on Fri Jun 12 2020 09:36:08 AM ********</marquee>
+    <marquee style="color: brown;font-weight: bold;font-size:20px;">******** The Information Of COVID-19 Last Modified on Fri Jun 12 2020 09:36:08 AM ********</marquee>
     <div class="row">
       <div class="col-12 col-sm-6">
         <table class="table table-striped table-hover table-responsive">
@@ -851,7 +852,7 @@
       <div class="col-sm m-1">
         <div class="card">
           <div class="card-header">
-            <marquee onmouseover="stop();" onmouseout="start();"><strong>LATEST NEWS:</strong><span style="color: red;font-size: 21px;"> You can only see the latest news of COVID-19 of Yesterday's</span></marquee> 
+            <marquee><strong>LATEST NEWS:</strong><span style="color: red;font-size: 21px;"> You can only see the latest news of COVID-19 of Yesterday's</span></marquee> 
           </div>
         </div>
       </div>
@@ -1200,7 +1201,7 @@ $(document).ready(function(){
   });
 })
 $(document).ready(function(){
-  $('#demo').carousel( { interval: 1600 });
+  $('#demo').carousel( { interval: 2500 });
 })
 function myFunction(x) {
   x.classList.toggle("change");
